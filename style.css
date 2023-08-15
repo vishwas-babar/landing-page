@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    perspective: 800px;
+}
+
+#nav {
+    height: 140px;
+    width: 100%;
+    
+    padding: 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 40px  ;
+    position: fixed;
+    z-index: 20;
+    
+
+}
+
+
+
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.1s;
+}
+
+
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: rgba(150, 193, 30, 0.3);
+    filter: blur(80px);
+    position: fixed;
+    z-index: 8;
+    transition: all linear 0.4s;
+}
+
+#nav img {
+    height: 75px;
+}
+
+#nav h4{
+    font-family: 500;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -99;
+    
+}
+
+#main{
+    position: relative;
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#page1 h1{
+    font-size: 120px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 2px #95c11e;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 500;
+    width: 500px;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller {
+    
+    white-space: nowrap;
+    overflow-x:auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller h4 {
+    display: inline-block;
+    color:black;
+    font-size: 110px;
+    font-weight: 900;
+    -webkit-text-stroke: 2px white;
+    font-family: gilroy;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: all ease-out 0.5s;
+
+}
+
+.scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   
+}
+
+#scroller h4:hover {
+    color: rgb(230, 230, 22);
+    -webkit-text-stroke: yellow;
+    
+}
+
+
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us {
+    height: 40vh;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+#about-us img {
+    height: 220px;
+    width: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    
+}
+
+#about-us-in {
+    width: 50%;
+    text-align: center;
+    
+}
+
+#about-us-in h3 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#about-us-in p{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#card-container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+
+}
+
+.card{
+    height: 80%;
+    width: 20%;
+    border-radius: 10px;
+    background-size: cover;
+    overflow: hidden;
+    transition: opacity linear 0.6s;
+    
+}
+
+#card1{
+    background-image: url(images&video/card1.avif);
+}
+#card2{
+    background-image: url(images&video/card2.avif);
+}
+#card3{
+    background-image: url(images&video/card3.avif);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity ease 0.5s;
+
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+
+
+.overlay h4{
+    color: black;
+    font-size: 4vh;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.overlay p {
+    color: black;
+    font-size: 3vh;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
